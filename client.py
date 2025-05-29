@@ -13,7 +13,7 @@ model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
 async def main(query: str):
     client = MultiServerMCPClient(
     {
-        "weather": {
+        "math": {
         "url": "http://127.0.0.1:8001/mcp",  # Replace with the remote server's URL
         "transport": "streamable_http"
     }
@@ -26,7 +26,7 @@ async def main(query: str):
     
 
 if __name__ == "__main__":
-    response=asyncio.run(main("what is 4+4"))
+    response=asyncio.run(main("what is 4*4"))
     print('------------')
     print(response)
 
